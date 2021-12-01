@@ -7,7 +7,8 @@
   <div class="list-group list-reset">
       <a class="list-group-item list-group-item-action"
         *ngFor="let item of giftsService.obtenerHistorial().reverse() | slice:0:10">
-          {{item.contenido}}
+          {{item}}
       </a>
+
   </div>
 </div>

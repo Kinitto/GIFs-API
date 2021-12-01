@@ -17,14 +17,4 @@ export class ResultadoComponent implements OnInit {
 
   }
 
-  /**
-   * Transforma la url a una url segura
-   *
-   * @param url
-   * @returns
-   */
-  transform(url: any) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-  }
-
 }

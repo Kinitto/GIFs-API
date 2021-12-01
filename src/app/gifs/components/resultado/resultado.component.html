@@ -3,7 +3,7 @@
     <!-- Resultados -->
     <div class="row">
       <div class="col-4" *ngFor="let item of resultadoRecibido">
-        <embed [src]="transform(item.embed_url) ">
+        <img width="350" [src]="(item.images.downsized_medium.url)">
       </div>
     </div>
 
