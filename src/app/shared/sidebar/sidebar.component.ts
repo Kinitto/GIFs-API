@@ -10,6 +10,10 @@ export class SidebarComponent implements OnInit {
   constructor(public giftsService: GifsService) { }
 
   ngOnInit(): void {
+    for (let index = 0; index < this.giftsService.localHistorial().length; index++) {
+      this.giftsService._historial.push(this.giftsService.localHistorial()[index]);
+    }
   }
+
 
 }

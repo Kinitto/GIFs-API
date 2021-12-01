@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Historial } from '../../interfaces/historial';
 import { GifsService } from '../../services/gifs-service.service';
 
 @Component({
@@ -23,16 +22,16 @@ export class BusquedaComponent implements OnInit {
 
   public agregarBusqueda() {
     const busqueda = this.crearBusqueda()
-
     this.gifservice.buscarGifs(busqueda);
 
     // Llama al servidor
     this.buscarGifsApi();
+    this.gifservice.guardarHistorial();
   }
 
 
   private buscarGifsApi(): any {
-    this.gifservice.buscarGifsApi(this.busqueda).subscribe(
+    this.gifservice.buscarGifsApi(this.busqueda + "&limit=12").subscribe(
       res => {
         // Emite el resultado al componente Resultado
         // Se ejecuta despues de obtener los datos por la asincronía
@@ -41,10 +40,7 @@ export class BusquedaComponent implements OnInit {
     );
   }
 
-
-  private crearBusqueda(): Historial {
-    return {
-      contenido: this.busqueda
-    }
+  private crearBusqueda(): String  {
+    return this.busqueda;
   }
 }
