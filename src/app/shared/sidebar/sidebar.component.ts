@@ -7,13 +7,21 @@ import { GifsService } from 'src/app/gifs/services/gifs-service.service';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor(public giftsService: GifsService) { }
+
+  constructor(private giftsService: GifsService) { }
 
   ngOnInit(): void {
-    for (let index = 0; index < this.giftsService.localHistorial().length; index++) {
-      this.giftsService._historial.push(this.giftsService.localHistorial()[index]);
-    }
+
   }
 
+  public obtenerListaReversa(): string[] {
+    return this.giftsService.obtenerLocalHistorial().reverse();
+  }
 
+  public buscarPorItem(item: string): void {
+    this.giftsService.buscarGifsApi(item).subscribe(res => this.giftsService.guardarResultado(res.data));
+  }
 }
+
+
+

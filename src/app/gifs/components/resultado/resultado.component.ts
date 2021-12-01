@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component, OnInit } from '@angular/core';
+import { GifsService } from '../../services/gifs-service.service';
 
 @Component({
   selector: 'app-resultado',
@@ -7,14 +7,20 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class ResultadoComponent implements OnInit {
 
-  // Recive el resultado del componente padre, que se usará en el html
-  @Input() resultadoRecibido: any;
+  public listaGifs: any;
 
-  constructor(private sanitizer: DomSanitizer) {
+  constructor(private gifsService: GifsService) {
+    gifsService.obtenerResultado().subscribe((res: any) => { this.listaGifs = res });
   }
 
   ngOnInit(): void {
 
+    const ultimaBusqueda = this.gifsService.obtenerUltimaBusqueda();
+
+    this.gifsService.buscarGifsApi(ultimaBusqueda).subscribe(
+
+      res => this.gifsService.guardarResultado(res.data)
+    );
   }
 
 }

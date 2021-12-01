@@ -2,8 +2,8 @@
   <div class="col">
     <!-- Resultados -->
     <div class="row">
-      <div class="col-4" *ngFor="let item of resultadoRecibido">
-        <img width="350" [src]="(item.images.downsized_medium.url)">
+      <div class="col-4" *ngFor="let item of listaGifs">
+        <img width="350" height="250" [src]="(item.images.downsized_medium.url)">
       </div>
     </div>
 
