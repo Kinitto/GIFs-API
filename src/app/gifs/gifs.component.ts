@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GifsComponent implements OnInit {
 
+  // Almacena la información del output, que también se usara para el input del componente resultado
   public resultado: any;
 
   constructor() {

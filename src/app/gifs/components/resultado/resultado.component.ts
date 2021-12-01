@@ -7,6 +7,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class ResultadoComponent implements OnInit {
 
+  // Recive el resultado del componente padre, que se usará en el html
   @Input() resultadoRecibido: any;
 
   constructor(private sanitizer: DomSanitizer) {
@@ -16,6 +17,12 @@ export class ResultadoComponent implements OnInit {
 
   }
 
+  /**
+   * Transforma la url a una url segura
+   *
+   * @param url
+   * @returns
+   */
   transform(url: any) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }

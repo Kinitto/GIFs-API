@@ -10,6 +10,7 @@ export class BusquedaComponent implements OnInit {
 
   public busqueda: string;
 
+  // Emite un evento de output a el componente padre
   @Output() resultadoEvent: EventEmitter<string>;
 
   constructor(private gifservice: GifsService) {
