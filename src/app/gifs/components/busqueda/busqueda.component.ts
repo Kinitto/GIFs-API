@@ -22,6 +22,7 @@ export class BusquedaComponent implements OnInit {
     this.gifservice.guardarHistorial(this.busqueda);
     // Llama al servidor
     this.obtenerGifsApi();
+
   }
 
   public obtenerGifsApi(): any {

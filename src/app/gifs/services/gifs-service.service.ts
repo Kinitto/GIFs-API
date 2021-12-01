@@ -12,6 +12,7 @@ export class GifsService {
 
   constructor(private http: HttpClient) { }
 
+  //Obtener ultima busqueda
   public obtenerUltimaBusqueda(): string {
     return this.obtenerLocalHistorial()[this.obtenerLocalHistorial().length - 1];
   }
