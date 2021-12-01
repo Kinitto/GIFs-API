@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GifsComponent implements OnInit {
 
-  constructor() { }
+  public resultado: any;
+
+  constructor() {
+ }
 
   ngOnInit(): void {
   }

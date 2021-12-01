@@ -1,22 +1,2 @@
-<div class="row p-3">
-  <div class="col">
-    <!-- Búsqueda -->
-    <h5>Buscar:</h5>
-    <input type="text" class="form-control" placeholder="Buscar gifs...">
-    <!-- End Búsqueda -->
-  </div>
-</div>
-<hr />
-<div class="row">
-  <div class="col">
-    <!-- Resultados -->
-    <div class="row">
-      <div>
-        <!-- Ya le daremos contenido -->
-      </div>
-    </div>
-
-    <!-- End Resultados -->
-  </div>
-</div>
-<!-- End Gifs-page -->
+<app-busqueda (resultadoEvent)="resultado = $event"></app-busqueda>
+<app-resultado [resultadoRecibido]="resultado"></app-resultado>

@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { GifsComponent } from './gifs.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
 import { ResultadoComponent } from './components/resultado/resultado.component';
-
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { ResultadoComponent } from './components/resultado/resultado.component';
     ResultadoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    HttpClientModule
   ],
   exports:[
     GifsComponent

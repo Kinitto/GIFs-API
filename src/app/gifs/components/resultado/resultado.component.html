@@ -1,1 +1,13 @@
-<p>resultado works!</p>
+<div class="row">
+  <div class="col">
+    <!-- Resultados -->
+    <div class="row">
+      <div class="col-3" *ngFor="let item of resultadoRecibido">
+        <embed [src]="transform(item.embed_url)" >
+      </div>
+    </div>
+
+    <!-- End Resultados -->
+  </div>
+</div>
+<!-- End Gifs-page -->
