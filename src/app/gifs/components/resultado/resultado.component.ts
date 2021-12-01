@@ -17,9 +17,9 @@ export class ResultadoComponent implements OnInit {
 
     const ultimaBusqueda = this.gifsService.obtenerUltimaBusqueda();
 
-    this.gifsService.buscarGifsApi(ultimaBusqueda).subscribe(
+    this.gifsService.buscarGifsApi(ultimaBusqueda + "&limit=12").subscribe(
 
-      res => this.gifsService.guardarResultado(res.data)
+      res => this.gifsService.guardarResultado(res.data )
     );
   }
 

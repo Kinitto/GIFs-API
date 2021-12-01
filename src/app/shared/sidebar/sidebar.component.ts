@@ -19,7 +19,7 @@ export class SidebarComponent implements OnInit {
   }
 
   public buscarPorItem(item: string): void {
-    this.giftsService.buscarGifsApi(item).subscribe(res => this.giftsService.guardarResultado(res.data));
+    this.giftsService.buscarGifsApi(item + "&limit=12").subscribe(res => this.giftsService.guardarResultado(res.data));
   }
 }
 
